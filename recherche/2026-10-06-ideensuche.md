@@ -892,3 +892,24 @@ Die verwaiste Gratis-Basis ist groß, aber schon 4 identische KI-Klone in 7 Woch
 - Tauchlog-App (DiverLog+-Ersatz): Ärger belegt (Schnitt 2,51 Sterne, 8 von 10 neuesten Bewertungen mit 1 Stern), aber kleiner Markt (111 Bewertungen) und mit MacDive bzw. Subsurface schon gute, günstige Alternativen. Unter 1.500 EUR/Monat.
 - Stundenzettel-App USA: riesige Nachfrage (354.561 Bewertungen in den Top 10), aber gepflegte Konkurrenz fängt die Wechsler auf (Cribasoft 56.188, Update 20.09.2026). Das Ranking hängt an der Zahl der Bewertungen, also ist kein Zeitfenster offen.
 - Open-House-Gästeliste USA: Markt klein (1.920 Bewertungen in den Top 10), Curb Hero (4,92) ist gepflegt, und Makler-CRMs bringen die Funktion schon mit. 600–1.700 EUR/Monat.
+
+
+## App-1-Auswertung Atlassian (2026-10-07, eigene Datenanalyse)
+
+Datenbasis: Atlassian-Marketplace-API (8.169 Apps, Versionsdaten von 1.461 Cloud-Apps ≥ 100 Installationen), Live-Abfrage der Konkurrenz je Kategorie.
+
+**Ergebnis:** Die These „verwaiste Connect-Apps = freie Lücke“ hält im Detail nicht. Für fast jede eingefrorene, bezahlte Connect-App gibt es bereits Forge-Alternativen mit mehr Installationen und guten Bewertungen:
+
+| Eingefrorene App (Installs, Sterne) | Bestehende Forge-Alternativen |
+|---|---|
+| Open API (Swagger) Integration (2.873, 4,4) + 3 weitere OpenAPI-Apps (~2.500) | O'Hara (1.800), Warsaw Dynamics (3.186), Narva (gratis), Just Add+ (8.135) |
+| OneDrive & SharePoint (Bilith, 960 + 531, 3,2–3,5) | ikuTeam (1.829 + 1.606, 4,5–4,6), Elevatic (1.637, 4,6), Apps+-Klon (149) |
+| Magic Estimations / Planning Poker (1.444) | Appfire Planning Poker (3.515), Agile Poker (1.836), Gratis-Apps |
+| Reminder / Calendar for Jira (Teamlead) | Atlassian „My Reminders“ (gratis), viele Kalender-Apps |
+| Questions & Answers (651) | Atlassian Questions (3.635), Forms/Polls-Apps |
+
+Data-Center-Apps ohne Cloud-Version (29 mit ≥ 700 Installs) sind fast alle Admin-/Server-Funktionen ohne Cloud-Bedarf oder von großen Anbietern mit Cloud-Alternative.
+
+Bezahlte Cloud-Apps mit vielen Installs und schlechten Bewertungen liegen meist in überfüllten Kategorien (Gantt, Kalender, Tabellen, Export) oder in Bereichen, die Atlassian nativ abdeckt (wiederkehrende Aufgaben → Jira Automation; Glossar → Rovo Definitions, seit 04/2026 für Premium/Enterprise automatisch aktiv). Auffällig: Klon-Anbieter „Apps+“ bekommt mit 0 Bewertungen ~150–300 Installationen pro App → der Marktplatz liefert Installationen, aber nicht automatisch Zahler.
+
+**Bester verbleibender Kandidat:** OneDrive/SharePoint-Ersatz für Bilith mit automatischem Makro-Migrator (0 € Kosten, Microsoft Graph ohne bezahltes Audit). Realistisch: einige hundert $/Monat, ca. 7 % Chance auf 5k in 24 Monaten.
