@@ -1,0 +1,117 @@
+{
+  "title": "Google Hotels Scraper input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "locations": {
+      "title": "Locations",
+      "type": "array",
+      "description": "Cities, neighbourhoods or areas to search, e.g. 'Paris', 'Berlin Mitte', 'near Times Square'.",
+      "editor": "stringList",
+      "prefill": [
+        "Paris"
+      ]
+    },
+    "checkIn": {
+      "title": "Check-in date",
+      "type": "string",
+      "description": "Arrival date (YYYY-MM-DD). Leave empty to let Google pick its default dates.",
+      "editor": "datepicker"
+    },
+    "checkOut": {
+      "title": "Check-out date",
+      "type": "string",
+      "description": "Departure date (YYYY-MM-DD). Required when check-in is set.",
+      "editor": "datepicker"
+    },
+    "adults": {
+      "title": "Adults",
+      "type": "integer",
+      "description": "Number of adult guests.",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 12
+    },
+    "country": {
+      "title": "Google region",
+      "type": "string",
+      "description": "Google region used for the search. Google decides the price currency from the server location, so use 'Convert prices to' for a fixed currency.",
+      "editor": "select",
+      "default": "us",
+      "enum": [
+        "us",
+        "gb",
+        "de",
+        "fr",
+        "it",
+        "es",
+        "nl",
+        "at",
+        "ch",
+        "ca",
+        "au",
+        "jp",
+        "in"
+      ],
+      "enumTitles": [
+        "United States",
+        "United Kingdom",
+        "Germany",
+        "France",
+        "Italy",
+        "Spain",
+        "Netherlands",
+        "Austria",
+        "Switzerland",
+        "Canada",
+        "Australia",
+        "Japan",
+        "India"
+      ]
+    },
+    "currency": {
+      "title": "Convert prices to",
+      "type": "string",
+      "description": "Optional. Adds converted prices in this currency using the European Central Bank's daily reference rates. Original prices are always kept.",
+      "editor": "select",
+      "enum": [
+        "EUR",
+        "USD",
+        "GBP",
+        "CHF",
+        "JPY",
+        "CAD",
+        "AUD",
+        "SEK",
+        "NOK",
+        "DKK",
+        "PLN",
+        "CZK",
+        "INR"
+      ]
+    },
+    "maxResultsPerLocation": {
+      "title": "Max hotels per location",
+      "type": "integer",
+      "description": "Upper limit of hotels saved per location (Google shows about 18-20 on the first results page).",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 40
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Proxy used to reach Google. The default Apify proxy works for most runs.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      },
+      "default": {
+        "useApifyProxy": true
+      }
+    }
+  },
+  "required": [
+    "locations"
+  ]
+}
