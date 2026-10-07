@@ -913,3 +913,13 @@ Data-Center-Apps ohne Cloud-Version (29 mit ≥ 700 Installs) sind fast alle Adm
 Bezahlte Cloud-Apps mit vielen Installs und schlechten Bewertungen liegen meist in überfüllten Kategorien (Gantt, Kalender, Tabellen, Export) oder in Bereichen, die Atlassian nativ abdeckt (wiederkehrende Aufgaben → Jira Automation; Glossar → Rovo Definitions, seit 04/2026 für Premium/Enterprise automatisch aktiv). Auffällig: Klon-Anbieter „Apps+“ bekommt mit 0 Bewertungen ~150–300 Installationen pro App → der Marktplatz liefert Installationen, aber nicht automatisch Zahler.
 
 **Bester verbleibender Kandidat:** OneDrive/SharePoint-Ersatz für Bilith mit automatischem Makro-Migrator (0 € Kosten, Microsoft Graph ohne bezahltes Audit). Realistisch: einige hundert $/Monat, ca. 7 % Chance auf 5k in 24 Monaten.
+
+
+## Apify-Auswertung (2026-10-07)
+
+Datenbasis: Apify-Store-API, 13.872 Actors mit Nutzungszahlen (Nutzer 7/30/90 Tage, Läufe und Fehlschläge der letzten 30 Tage, Bewertungen, Preismodell).
+
+- Große Quellen (Instagram, LinkedIn, TikTok, Facebook, Google Maps) haben 20–100 Konkurrenten und meist Personendaten → ausgeschlossen.
+- Echte Schwachstelle gefunden: **Google Hotels**. Marktführer `zerobreak/google-hotels-scraper` hat 517 Nutzer/30 Tage, aber **64 % fehlgeschlagene Läufe** (29.900 von 46.691). Gesamtnachfrage Hotel-Preise über Google ca. 1.150 Nutzer/30 Tage. Einziger zuverlässiger Konkurrent: `vittuhy/google-travel-hotel-prices` (509 Nutzer, 4 % Fehler, 1 Bewertung). Übrige: 8–55 Nutzer.
+- Technischer Test (12 Städte, Datum im Suchtext): Google-Travel-Seite per einfachem HTTP-Abruf erreichbar, 12/12 erfolgreich, Hotelnamen und „Prices starting from …“ im HTML. Noch offen: Verhalten über Apify-Proxys.
+- Weitere kleine Schwachstellen: Google Play Data Extractor (56 Nutzer, 48 % Fehler, aber gute Alternativen), Pagesjaunes (32 Nutzer, 29 % Fehler), Google Maps Popular Times (32 Nutzer, 20 % Fehler, einziger Anbieter).
